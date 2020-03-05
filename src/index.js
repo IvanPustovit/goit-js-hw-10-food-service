@@ -6,8 +6,8 @@ import './styles.css';
 
 const list = document.querySelector('.js-menu')
 
-function bildMarkup (menus){
-    const markup = menus.map(el =>cart(el)).join('')
+function bildMarkup (arr){    
+    const markup = cart(menus)
     list.insertAdjacentHTML('beforeend', markup)
     // console.log(markup);
 }
@@ -26,13 +26,18 @@ const Theme = {
 
 
 function inputClick (){
-    if (switchInput.checked){
-    body.classList.add(Theme.DARK)
+
+    switchInput.checked?body.classList.add(Theme.DARK):body.classList.remove(Theme.DARK);
+
+    body.classList.add(Theme.LIGHT);
     localStorage.setItem('key', switchInput.checked)
-    return
-    }else{body.classList.remove(Theme.DARK)
-    body.classList.add(Theme.LIGHT)}
-    localStorage.setItem('key', switchInput.checked)
+
+    // if (switchInput.checked){
+    // body.classList.add(Theme.DARK)
+    // localStorage.setItem('key', switchInput.checked)
+    // }else{body.classList.remove(Theme.DARK)
+    // body.classList.add(Theme.LIGHT)}
+    // localStorage.setItem('key', switchInput.checked)
     }
   
 function load (){
